@@ -417,14 +417,14 @@
                             infoString += "<img style='width:20px;' src='lib/img/star-off.png' alt='1' title='" + grade[x] + "'>";
                         }
 
-                        infoString += "<tr><td style='display: flex;'><img style='height:25px;' src='icon/compasses.png'/><div style='margin: auto 0px auto 10px;'>" + markersArray[i].distance + "m</div></td></tr>";
+                        infoString += "<tr><td style='display: flex;'><img style='height:25px;' src='image/compasses.png'/><div style='margin: auto 0px auto 10px;'>" + markersArray[i].distance + "m</div></td></tr>";
                         infoString += "</div></td></tr>" +
                                 "<tr><td><button class='default' id='enterStore' storeId='" + markersArray[i].storeID + "' onclick='directEnterStore(this);' style='width: 100%;'>Enter Store</button></td></tr>" +
                                 "<tr><td><button class='default' onclick='sizeCenterPane();' style='width: 100%;'>Stores List</button></td></tr>" +
                                 //"<tr><td><a href=\"javascript:calcRoute(this);" + "\" x='" + "happy" + "'>Direct</a></td></tr>" +
                                 "<tr><td><button class='default' id='comment' storeId='" + markersArray[i].storeID + "' onclick='comment(this);' style='width: 100%;'>Comment</button></td></tr>" +
                                 "</table>";
-                        infoString += "<a style='width:25px;height:25px;' storeId='" + markersArray[i].storeID + "' onclick='addToFollowList(this);'><img style='width:25px;' src='icon/heart.png' ></a>";
+                        infoString += "<a style='width:25px;height:25px;' storeId='" + markersArray[i].storeID + "' onclick='addToFollowList(this);'><img style='width:25px;' src='image/heart.png' ></a>";
                         var infoWindow = addInfoWindow(markersArray[i], infoString);
                     } else {
                         var infoList =
@@ -463,7 +463,7 @@
                                     "<td style='font-size:20px;height:20px;'>" + MarkerListForInfoBox[x].name + "</td>" +
                                     "</tr>" +
                                     "<tr>" +
-                                    "<td style='display: flex;'><img style='height:25px;' src='icon/compasses.png'/><div style='height:25px;margin-left:10px;'>" + MarkerListForInfoBox[x].distance + "m<div></td>" +
+                                    "<td style='display: flex;'><img style='height:25px;' src='image/compasses.png'/><div style='height:25px;margin-left:10px;'>" + MarkerListForInfoBox[x].distance + "m<div></td>" +
                                     "</tr>" +
                                     "<tr><td><div class='rank'><div id='score' style='cursor:pointer;width:100px;'>";
                             var displayRank = parseInt(parseInt(MarkerListForInfoBox[x].rank) / 100 * 5);
@@ -573,7 +573,7 @@
                                  */
                                 $("#comment-display").append(
                                         '<div class="' + randomSize(feedback.length) + '">' +
-                                        '<div style="display: flex;"><img style="margin: 5px;height:50px; id="personalInfo" src="icon/profle.png" title="User Photo"/>' +
+                                        '<div style="display: flex;"><img style="margin: 5px;height:50px; id="personalInfo" src="image/profle.png" title="User Photo"/>' +
                                         '<div><a href=HandleUser?action=viewOtherUser&userId=' + userId + '>' + userName + '</a>' +
                                         '<br/>' + postedDate + '</div></div><cpan>' + feedback + '</cpan></div>');
                             }
@@ -811,9 +811,9 @@
                             "<table style='width: 360px'>" +
                             "<tr><td style='font-size:25px;font-family: Roboto;padding:0px 0px 10px 0px;'>" + pageDisplayed[x].name + "</td>" +
                             "<td rowspan='5' width='40px;font-weight: 600;'><div id='rightArrow' class='controlArrow next' storeId='" + pageDisplayed[x].storeID + "' onclick='viewMoreDetail(this);'></div><td></tr>" +
-                            "<td style='font-size:15px;font-family: Roboto;display: flex;'><img style='height:25px;' src='icon/compasses.png'/><div style='height:25px;margin-left:10px;'>" + pageDisplayed[x].distance + "m</div></td></tr>" +
-                            "<tr><td style='font-size:15px;font-family: Roboto;display: flex;'><img style='margin-top: auto;height: 25px;margin-bottom: auto;' src='icon/location.png'/><div style='width:70%;margin-left:10px;'>" + pageDisplayed[x].storeAddress + "</div></td></tr>" +
-                            "<tr><td style='font-size:15px;font-family: Roboto;display: flex;'><img style='height:25px;' src='icon/contact.png'/><div style='height:25px;margin-left:10px;'>" + pageDisplayed[x].storePhoneNumber + "</div></td></tr>" +
+                            "<td style='font-size:15px;font-family: Roboto;display: flex;'><img style='height:25px;' src='image/compasses.png'/><div style='height:25px;margin-left:10px;'>" + pageDisplayed[x].distance + "m</div></td></tr>" +
+                            "<tr><td style='font-size:15px;font-family: Roboto;display: flex;'><img style='margin-top: auto;height: 25px;margin-bottom: auto;' src='image/location.png'/><div style='width:70%;margin-left:10px;'>" + pageDisplayed[x].storeAddress + "</div></td></tr>" +
+                            "<tr><td style='font-size:15px;font-family: Roboto;display: flex;'><img style='height:25px;' src='image/contact.png'/><div style='height:25px;margin-left:10px;'>" + pageDisplayed[x].storePhoneNumber + "</div></td></tr>" +
                             "</table>" +
                             "</li >"
                             );
@@ -991,7 +991,7 @@
                 $('#mainContent').animate({right: '-40px'});
                 $('#map-canvas').animate({left: '-20%'});
                 //$('#distanceBar').animate({right: '45%'});
-                $('#listsStores').attr('src', 'icon/arrow-right.png').attr('onclick', 'sizeLeftPane();');
+                $('#listsStores').attr('src', 'image/arrow-right.png').attr('onclick', 'sizeLeftPane();');
             }
 
             function returnMapUI() {
@@ -1021,7 +1021,7 @@
                 $('#mainContent').animate({right: '-50%'});
                 $('#map-canvas').animate({left: '0%'});
                 //$('#distanceBar').animate({right: '5%'});
-                $('#listsStores').attr('src', 'icon/arrow-left.png').attr('onclick', 'sizeCenterPane();');
+                $('#listsStores').attr('src', 'image/arrow-left.png').attr('onclick', 'sizeCenterPane();');
             }
 
             function clearOverlays() {
@@ -1546,13 +1546,13 @@
 
         <div id="legend" style="background: white;padding: 15px"></div>
         <div id="menu" class="menu" style="text-align: right; position: absolute;right: 10px; top:15%; z-index: 4;">
-            <div style=" height: 65px;"><img id="personalInfo" src="icon/profle.png" title="Personal Profile"/></div>
-            <div style=" height: 65px;"><img id="accurateSearch" onclick="accurateSearch();" src="icon/magnifyingglass.png" title="Accurate Search"/></div>
-            <div style=" height: 65px;"><img id="favList" onclick="openFavList();" src="icon/follow.png" title="Tap List"/></div>
-            <div style=" height: 65px;"><img id="chat" src="icon/chat.png" title="Chat"/></div>
-            <div id="uiDirect"  style=" height: 65px;"><img id="listsStores" src="icon/arrow-left.png" onclick="sizeCenterPane();" title="Store List"/></div>
-            <div style=" height: 65px;"><img id="zoomin" onclick="zoomIn();" src="icon/zoomin.png" title="Zoom In"/></div>
-            <div style=" height: 65px;"><img id="zoomout" onclick="zoomOut();" src="icon/zoomout.png" title="Zoom Out"/></div>
+            <div style=" height: 65px;"><img id="personalInfo" src="image/profle.png" title="Personal Profile"/></div>
+            <div style=" height: 65px;"><img id="accurateSearch" onclick="accurateSearch();" src="image/magnifyingglass.png" title="Accurate Search"/></div>
+            <div style=" height: 65px;"><img id="favList" onclick="openFavList();" src="image/follow.png" title="Tap List"/></div>
+            <div style=" height: 65px;"><img id="chat" src="image/chat.png" title="Chat"/></div>
+            <div id="uiDirect"  style=" height: 65px;"><img id="listsStores" src="image/arrow-left.png" onclick="sizeCenterPane();" title="Store List"/></div>
+            <div style=" height: 65px;"><img id="zoomin" onclick="zoomIn();" src="image/zoomin.png" title="Zoom In"/></div>
+            <div style=" height: 65px;"><img id="zoomout" onclick="zoomOut();" src="image/zoomout.png" title="Zoom Out"/></div>
         </div>
         <script>
             $("#personalInfo").click(function() {
@@ -1612,7 +1612,7 @@
                                 collision: "fit" + " " + "fit"
                             });
                             $("#dialog-form").parent().prepend("<div id='loading' class='loading' style='display: none;'></div>");
-                            $("#dialog-form").parent().append('<div class="loginByOthers"><img src="icon/fb.png"/><img src="icon/twitter.png"/><img src="icon/googleplus.png"/></div>');
+                            $("#dialog-form").parent().append('<div class="loginByOthers"><img src="image/fb.png"/><img src="image/twitter.png"/><img src="image/googleplus.png"/></div>');
                         } else {
                             $("#personalInfo-display").empty();
                             $("#dialog-personalInfo").dialog({
