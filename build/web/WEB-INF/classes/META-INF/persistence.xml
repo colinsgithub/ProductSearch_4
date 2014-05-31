@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="ProductSearch_3PU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>database.StoreMerchandise</class>
+    <class>database.UserStatus</class>
+    <class>database.Cloth</class>
+    <class>database.PromotionScheme</class>
+    <class>database.StoreUppergarMentchoice</class>
+    <class>database.Brand</class>
+    <class>database.PhonotapeAndVideotape</class>
+    <class>database.Category</class>
+    <class>database.Merchandise</class>
+    <class>database.User</class>
+    <class>database.Comment</class>
+    <class>database.Store</class>
+    <class>database.UpperGarment</class>
+    <class>database.Tag</class>
+    <class>database.Chatroom</class>
+    <class>database.PromotionPreference</class>
+    <class>database.Message</class>
+    <class>bean.Tag</class>
+    <class>bean.Userstatus</class>
+    <class>bean.Brand</class>
+    <class>bean.Comment</class>
+    <class>bean.Store</class>
+    <class>bean.User</class>
+    <class>bean.Category</class>
+    <class>bean.Merchandise</class>
+    <class>bean.StoreMerchandise</class>
+    <class>bean.Message</class>
+    <class>bean.Chatroom</class>
+    <class>bean.Cloth</class>
+    <class>bean.Promotionscheme</class>
+    <class>bean.Storeuppergarmentchoice</class>
+    <class>bean.Uppergarment</class>
+    <class>bean.Promotionpreference</class>
+    <class>bean.PhonotapeAndVideotape</class>
+    <class>bean.Navigation</class>
+    <class>bean.FlashMemoryCard</class>
+    <class>bean.CPUManufacturer</class>
+    <class>bean.ConnectivityAndSharing</class>
+    <class>bean.PromotionScheme</class>
+    <class>bean.Mobile</class>
+    <class>bean.UpperGarment</class>
+    <class>bean.LowerGarment</class>
+    <class>bean.TouchScreenType</class>
+    <class>bean.WLANType</class>
+    <class>bean.StoreUpperGarmentChoice</class>
+    <class>bean.MachineInterface</class>
+    <class>bean.KeyboardType</class>
+    <class>bean.OperatingSystem</class>
+    <class>bean.CPUCoreType</class>
+    <class>bean.ScreenMaterial</class>
+    <class>bean.MobileNetworkStandard</class>
+    <class>bean.UserStatus</class>
+    <class>bean.PromotionPreference</class>
+    <class>bean.ChatRoom</class>
+    <class>bean.MobileType</class>
+    <class>bean.SIMCardType</class>
+    <class>bean.SensorType</class>
+    <class>bean.Flash</class>
+    <class>bean.Keyboardtype</class>
+    <class>bean.Operatingsystem</class>
+    <class>bean.Flashmemorycard</class>
+    <class>bean.Cpucoretype</class>
+    <class>bean.Screenmaterial</class>
+    <class>bean.Mobiletype</class>
+    <class>bean.Sensortype</class>
+    <class>bean.Storemerchandise</class>
+    <class>bean.Machineinterface</class>
+    <class>bean.Connectivityandsharing</class>
+    <class>bean.Mobilenetworkstandard</class>
+    <class>bean.Touchscreentype</class>
+    <class>bean.Cpumanufacturer</class>
+    <class>bean.Simcardtype</class>
+    <class>bean.Wlantype</class>
+    <class>bean.Lowergarment</class>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://tyt06326.no-ip.org:3306/productsearchweb?zeroDateTimeBehavior=convertToNull"/>
+      <property name="javax.persistence.jdbc.password" value="fyp"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.user" value="fyp"/>
+    </properties>
+  </persistence-unit>
+</persistence>
