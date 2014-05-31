@@ -12,6 +12,18 @@
                 </library>
                 <library dirs="200">
                     <file>${file.reference.java-json.jar}</file>
+                </library>
+                <library dirs="200">
+                    <file>${file.reference.gson-2.2.4-javadoc.jar-1}</file>
+                </library>
+                <library dirs="200">
+                    <file>${file.reference.gson-2.2.4-sources.jar-1}</file>
+                </library>
+                <library dirs="200">
+                    <file>${file.reference.gson-2.2.4.jar-1}</file>
+                </library>
+                <library dirs="200">
+                    <file>${file.reference.java-json.jar}</file>
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
                 <library dirs="200">

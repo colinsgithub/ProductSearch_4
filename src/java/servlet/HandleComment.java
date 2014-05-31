@@ -94,7 +94,11 @@ public class HandleComment extends HttpServlet {
                     commentObject.put("userId", comments.get(x).getUser().getUserID());
                     commentObject.put("userName", comments.get(x).getUser().getUserName());
                     commentObject.put("feedback", comments.get(x).getFeedback());
-                    commentObject.put("postedDate", comments.get(x).getCommentPK().getPostTime().toGMTString().replaceAll("GMT", ""));
+                    commentObject.put("score", comments.get(x).getRank());
+                    String postedDate = comments.get(x).getCommentPK().getPostTime().toGMTString().replaceAll("GMT", "");
+                    String[] dateArray = postedDate.split(" ");
+                    
+                    commentObject.put("postedDate", dateArray[0] + " " + dateArray[1] + " " + dateArray[2]);
 
                     commentJsonArray.put(commentObject);
                 }
@@ -118,15 +122,16 @@ public class HandleComment extends HttpServlet {
 
             int storeId = Integer.parseInt(request.getParameter("storeId"));
             String comment = request.getParameter("comment");
+            Short score = Short.parseShort(request.getParameter("score"));
 
             EntityManagerFactory factory = Persistence.createEntityManagerFactory("ProductSearch_3PU");
             EntityManager em = factory.createEntityManager();
             em.getTransaction().begin();
-
             
             Comment newComment = new Comment();
             newComment.setCommentPK(new CommentPK(user.getUserID(),storeId, new Date()));
             newComment.setFeedback(comment);
+            newComment.setRank(score);
             
             em.persist(newComment);
 

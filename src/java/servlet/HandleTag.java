@@ -115,21 +115,18 @@ public class HandleTag extends HttpServlet {
                 User user = (User) httpSession.getAttribute("user");
 
                 String tagId = request.getParameter("tagId");
-
                 EntityManagerFactory factory = Persistence.createEntityManagerFactory("ProductSearch_3PU");
                 EntityManager em = factory.createEntityManager();
                 em.getTransaction().begin();
-                Tag tag = em.merge(em.find(Tag.class, Integer.parseInt(tagId)));
+                Tag tag = (em.find(Tag.class, Integer.parseInt(tagId)));
                 em.remove(tag);
                 User newUser = em.find(User.class, user.getUserID());
                 httpSession.setAttribute("user", newUser);
                 //renew the bean.user in user
-
                 //User user = em.find(User.class, userId);
                 em.getTransaction().commit();
                 em.close();
                 factory.close();
-
                 out.println("true");
             } catch (Exception ex) {
                 Logger.getLogger(HandleTag.class.getName()).log(Level.SEVERE, null, ex);

@@ -4,6 +4,7 @@
  */
 package bean;
 
+import com.google.gson.annotations.Expose;
 import java.io.Serializable;
 import java.util.Collection;
 import javax.persistence.Basic;
@@ -41,40 +42,51 @@ public class Cloth implements Serializable {
     protected ClothPK clothPK;
     @Basic(optional = false)
     @Column(name = "sex")
+    @Expose(deserialize = false)
     private String sex;
     @Basic(optional = false)
     @Lob
     @Column(name = "fabric")
+    @Expose(deserialize = false)
     private String fabric;
     @Basic(optional = false)
     @Column(name = "fabricContent")
+    @Expose(deserialize = false)
     private double fabricContent;
     @Basic(optional = false)
     @Lob
     @Column(name = "occasion")
+    @Expose(deserialize = false)
     private String occasion;
     @Basic(optional = false)
     @Lob
     @Column(name = "edition")
+    @Expose(deserialize = false)
     private String edition;
     @Basic(optional = false)
     @Lob
     @Column(name = "careLabel")
+    @Expose(deserialize = false)
     private String careLabel;
     @Lob
     @Column(name = "thickness")
+    @Expose(deserialize = false)
     private String thickness;
     @Lob
     @Column(name = "threadThickness")
+    @Expose(deserialize = false)
     private String threadThickness;
     @Lob
     @Column(name = "season")
+    @Expose(deserialize = false)
     private String season;
     @Lob
     @Column(name = "basicStyle")
+    @Expose(deserialize = false)
     private String basicStyle;
     @Lob
     @Column(name = "subStyle")
+    @Expose(deserialize = false)
     private String subStyle;
     @JoinColumns({
         @JoinColumn(name = "clothID", referencedColumnName = "merchandiseID", insertable = false, updatable = false),

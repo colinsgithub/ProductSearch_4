@@ -14,22 +14,12 @@ makeBoxes = function(startIndex, endIndex, storeId) {
         // pass comment for load part of comment list 
         success: function(response) {
             var json = JSON.parse(response);
+
             for (var x in json['comments']) {
-                var userId = json['comments'][x]['userId'];
-                var userName = json['comments'][x]['userName'];
-                var feedback = json['comments'][x]['feedback'];
-                var postedDate = json['comments'][x]['postedDate'];
-
-
+                var list = createCommentList(json, x);
                 var box = document.createElement('div');
-                box.className = randomSize(feedback.length);
-
-
-                $(box).append(
-                        '<div style="display: flex;"><img style="margin: 5px;height:50px; id="personalInfo" src="icon/profle.png" title="User Photo"/>' +
-                        '<div><a href=HandleUser?action=viewOtherUser&userId=' + userId + '>' + userName + '</a>' +
-                        '<br/>' + postedDate + '</div></div><cpan>' + feedback + '</cpan>');
-
+                
+                $(box).append(list);
                 // add box DOM node to array of new elements
                 boxes.push(box);
             }
@@ -49,13 +39,47 @@ makeBoxes = function(startIndex, endIndex, storeId) {
     return newCommentList;
 };
 
+function createCommentList(json, x) {
+    var userId = json['comments'][x]['userId'];
+    var userName = json['comments'][x]['userName'];
+    var feedback = json['comments'][x]['feedback'];
+    var score = json['comments'][x]['score'];
+    var postedDate = json['comments'][x]['postedDate'];
+
+    var starNum = '';
+    for (var x = 1; x <= 5; x++) {
+        if (x <= score) {
+            starNum += '<li class="rated"></li>';
+        } else {
+            starNum += '<li></li>';
+        }
+
+    }
+    return '<div class="' + randomSize(feedback.length) + '">' +
+            '<table>' +
+            '<tr><td rowspan="2"><img style="margin: 5px;height:50px; id="personalInfo" src="image/profle.png" title="User Photo"/></td>' +
+            '<td><h5><a href=HandleUser?action=viewOtherUser&userId=' + userId + '>' + userName + '</a></h5></td></tr>' +
+            '<tr><td><div class="rating small fg-yellow">' +
+            '<ul>' +
+            starNum +
+            '</ul>' +
+            '</div></td></tr>' +
+            '</table>' +
+            '<p class="tertiary-text-secondary">' + feedback + '</p>' +
+            '<h6>' + postedDate + '</h6>' +
+            '</div>';
+}
+
 function randomSize(length) {
     var boxSize = '' + 2 + (Math.ceil(Math.random() * 2) + 1);
     if (length < 28) {
         boxSize = '21';
         return 'box size' + boxSize;
-    } else if (length > 60) {
+    } else if (length > 60 && length < 90) {
         boxSize = '23';
+        return 'box size' + boxSize;
+    } else if (length > 90) {
+        boxSize = '24';
         return 'box size' + boxSize;
     }
 
@@ -64,7 +88,9 @@ function randomSize(length) {
 
 
 function submitComment(obj) {
-    var commentValue = $(obj).siblings('textarea').val();
+    var commentValue = $(obj).parent().siblings('.row').find('textarea').val();
+    window.console.log(commentValue);
+    var score = $(obj).siblings('#rating_1').attr('score');
     var storeId = $(obj).attr('storeid');
     //get comment from textarea
 
@@ -74,7 +100,8 @@ function submitComment(obj) {
         async: false,
         data: {
             storeId: storeId,
-            comment: commentValue
+            comment: commentValue,
+            score: score
         },
         // pass comment for load part of comment list 
         success: function(response) {

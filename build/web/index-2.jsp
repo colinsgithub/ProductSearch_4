@@ -197,7 +197,6 @@
                         out.println("dropMarker(latLngB);");
 
                     }
-
                     out.println("createList();");
                 }
             %>
@@ -513,7 +512,7 @@
                             $(box).append('<div class="Grid" style="margin:10px;">' +
                                     '<div class="row"><textarea style="width: 100%;resize:none;" id="comment" rows="5" placeholder="Type Your Comment..."></textarea></div>' +
                                     '<div class="row">' +
-                                    '<div class="rating" id="rating_1">' +
+                                    '<div class="rating" id="rating_1" score="3">' +
                                     '<ul>' +
                                     '<li class="rated"></li>' +
                                     '<li class="rated"></li>' +
@@ -521,19 +520,24 @@
                                     '<li></li>' +
                                     '<li></li>' +
                                     '</ul>' +
-                                    '<span style="line-height: 25px;" class="score-hint"></span>' +
+                                    '<span style="line-height:25px;" class="score-hint"></span>' +
                                     '</div>' +
-                                    '<button style="float: right;" class="Primary" storeId="' + storeId + '" onclick="submitComment(this);">Submit</button></div></div>');
+                                    '<button style="float: right;" class="Primary" storeId="' + storeId + '" onclick="submitComment(this);">Submit</button>' +
+                                    '</div></div>');
                             $("#comment-display").prepend(box).nested("prepend", box);
 
                             $("#rating_1").rating({
                                 static: false,
-                                score: 2,
+                                score: 3,
                                 stars: 5,
                                 showHint: true,
                                 hints: ['Bad', 'Poor', 'Regular', 'Good', 'Gorgeous'],
                                 showScore: true,
                                 scoreHint: "Current score: ",
+                                click: function(value, rating) {
+                                    rating.rate(value);
+                                    $("#rating_1").attr('score', value);
+                                }
                             });
                         },
                         "Close": function() {
@@ -562,26 +566,16 @@
                         // pass comment for load part of comment list 
                         success: function(response) {
                             var json = JSON.parse(response);
+
                             for (var x in json['comments']) {
-                                var userId = json['comments'][x]['userId'];
-                                var userName = json['comments'][x]['userName'];
-                                var feedback = json['comments'][x]['feedback'];
-                                var postedDate = json['comments'][x]['postedDate'];
-                                /*
-                                 $("#comment-display").append("<a href=HandleUser?action=viewOtherUser&userId=" + userId + ">" + userName + "</a>");
-                                 $("#comment-display").append("<div style=''>" + feedback + "</div>");
-                                 */
-                                $("#comment-display").append(
-                                        '<div class="' + randomSize(feedback.length) + '">' +
-                                        '<div style="display: flex;"><img style="margin: 5px;height:50px; id="personalInfo" src="image/profle.png" title="User Photo"/>' +
-                                        '<div><a href=HandleUser?action=viewOtherUser&userId=' + userId + '>' + userName + '</a>' +
-                                        '<br/>' + postedDate + '</div></div><cpan>' + feedback + '</cpan></div>');
+                                var list = createCommentList(json, x);
+                                $("#comment-display").append(list);
                             }
 
                             $("#comment-display").nested({
                                 resizeToFit: false,
                                 minWidth: 100,
-                                gutter: 5
+                                gutter: 8
                             });
                             $("#dialog-commentList").scroll(loadMore);
                             var isLastIndex = json['isLastIndex'];
@@ -618,9 +612,6 @@
                     }
                 });
             }
-
-
-
 
             function directEnterStore(obj) {
                 sizeCenterPane();
@@ -1225,6 +1216,7 @@
                                         "fnCreatedCell": function(nTd, sData, oData, iRow, iCol) {
                                             $(nTd).attr("storeID", oData.storeID);
                                             $(nTd).attr("onclick", "closeTagDialog(this)");
+
                                         }
                                     },
                                     {"aTargets": [2],
@@ -1253,17 +1245,23 @@
                             });
                             $('#tag-table tbody').on('click', 'td.tag-remove', function() {
                                 var tagId = $(this).attr('tagid');
-                                window.console.log(tagId);
+                                var curr = $(this);
                                 $.ajax({
                                     url: 'HandleTag?action=cancelTag&' + 'tagId=' + tagId,
                                     type: 'POST',
                                     success: function(response) {
                                         var isLogin = (response === 'false');
+                                        var isRemove = (response !== 'true');
+
                                         if (isLogin) {
                                             $('#personalInfo').click();
-                                        } else {
+                                        } else if (isRemove) {
                                             $("#dialog-tagList").parent().append("<div id='loading' class='loading' style='display: none;'></div>");
                                             displayNotify('Message', 'Romove Successfully...');
+                                            $(curr).parent('tr').addClass('selected');
+                                            table.row('.selected').remove().draw(false);
+                                        } else {
+                                            displayNotify('Alert', 'Problem Cased...');
                                         }
                                     }
                                 });
@@ -1431,7 +1429,7 @@
                         {"aTargets": [2],
                             "fnCreatedCell": function(nTd, sData, oData, iRow, iCol) {
                                 window.console.log(oData);
-                                var value = '$'
+                                var value = '$';
                                 value += $(nTd).html();
                                 $(nTd).empty().append(value);
                             }
@@ -1766,7 +1764,7 @@
 
         <div id="dialog-commentList" class="metro">
             <legend>Store Comment</legend>
-            <div id="comment-display" class="comment-display">
+            <div id="comment-display" style="text-align: justify;" class="comment-display metro">
             </div>
         </div>
 
