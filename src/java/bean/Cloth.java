@@ -1,10 +1,11 @@
 /*
- * To change this template, choose Tools | Templates
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package bean;
 
-import com.google.gson.annotations.Expose;
 import java.io.Serializable;
 import java.util.Collection;
 import javax.persistence.Basic;
@@ -25,7 +26,7 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author poonkaho
+ * @author user
  */
 @Entity
 @Table(name = "cloth")
@@ -42,51 +43,40 @@ public class Cloth implements Serializable {
     protected ClothPK clothPK;
     @Basic(optional = false)
     @Column(name = "sex")
-    @Expose(deserialize = false)
     private String sex;
     @Basic(optional = false)
     @Lob
     @Column(name = "fabric")
-    @Expose(deserialize = false)
     private String fabric;
     @Basic(optional = false)
     @Column(name = "fabricContent")
-    @Expose(deserialize = false)
     private double fabricContent;
     @Basic(optional = false)
     @Lob
     @Column(name = "occasion")
-    @Expose(deserialize = false)
     private String occasion;
     @Basic(optional = false)
     @Lob
     @Column(name = "edition")
-    @Expose(deserialize = false)
     private String edition;
     @Basic(optional = false)
     @Lob
     @Column(name = "careLabel")
-    @Expose(deserialize = false)
     private String careLabel;
     @Lob
     @Column(name = "thickness")
-    @Expose(deserialize = false)
     private String thickness;
     @Lob
     @Column(name = "threadThickness")
-    @Expose(deserialize = false)
     private String threadThickness;
     @Lob
     @Column(name = "season")
-    @Expose(deserialize = false)
     private String season;
     @Lob
     @Column(name = "basicStyle")
-    @Expose(deserialize = false)
     private String basicStyle;
     @Lob
     @Column(name = "subStyle")
-    @Expose(deserialize = false)
     private String subStyle;
     @JoinColumns({
         @JoinColumn(name = "clothID", referencedColumnName = "merchandiseID", insertable = false, updatable = false),
@@ -94,9 +84,9 @@ public class Cloth implements Serializable {
     @OneToOne(optional = false)
     private Merchandise merchandise;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "cloth")
-    private Collection<Uppergarment> uppergarmentCollection;
+    private Collection<UpperGarment> upperGarmentCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "cloth")
-    private Collection<Lowergarment> lowergarmentCollection;
+    private Collection<LowerGarment> lowerGarmentCollection;
 
     public Cloth() {
     }
@@ -224,21 +214,21 @@ public class Cloth implements Serializable {
     }
 
     @XmlTransient
-    public Collection<Uppergarment> getUppergarmentCollection() {
-        return uppergarmentCollection;
+    public Collection<UpperGarment> getUpperGarmentCollection() {
+        return upperGarmentCollection;
     }
 
-    public void setUppergarmentCollection(Collection<Uppergarment> uppergarmentCollection) {
-        this.uppergarmentCollection = uppergarmentCollection;
+    public void setUpperGarmentCollection(Collection<UpperGarment> upperGarmentCollection) {
+        this.upperGarmentCollection = upperGarmentCollection;
     }
 
     @XmlTransient
-    public Collection<Lowergarment> getLowergarmentCollection() {
-        return lowergarmentCollection;
+    public Collection<LowerGarment> getLowerGarmentCollection() {
+        return lowerGarmentCollection;
     }
 
-    public void setLowergarmentCollection(Collection<Lowergarment> lowergarmentCollection) {
-        this.lowergarmentCollection = lowergarmentCollection;
+    public void setLowerGarmentCollection(Collection<LowerGarment> lowerGarmentCollection) {
+        this.lowerGarmentCollection = lowerGarmentCollection;
     }
 
     @Override

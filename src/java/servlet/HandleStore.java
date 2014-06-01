@@ -7,7 +7,7 @@ package servlet;
 import bean.Merchandise;
 import bean.Mobile;
 import bean.Store;
-import bean.Storemerchandise;
+import bean.StoreMerchandise;
 import bean.Tag;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -123,7 +123,7 @@ public class HandleStore extends HttpServlet {
                 EntityManager em = factory.createEntityManager();
                 em.getTransaction().begin();
                 Store store = em.find(Store.class, Integer.parseInt(storeId));
-                ArrayList<Storemerchandise> merchandises = new ArrayList<Storemerchandise>(store.getStoremerchandiseCollection());
+                ArrayList<StoreMerchandise> merchandises = new ArrayList<StoreMerchandise>(store.getStoreMerchandiseCollection());
 
                 JSONObject jsonObject = new JSONObject();
                 final GsonBuilder builder = new GsonBuilder();

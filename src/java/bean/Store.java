@@ -1,7 +1,9 @@
 /*
- * To change this template, choose Tools | Templates
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package bean;
 
 import java.io.Serializable;
@@ -28,7 +30,7 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author poonkaho
+ * @author user
  */
 @Entity
 @Table(name = "store")
@@ -87,9 +89,9 @@ public class Store implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "storeID")
     private Collection<Tag> tagCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "store")
-    private Collection<Promotionscheme> promotionschemeCollection;
+    private Collection<PromotionScheme> promotionSchemeCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "store")
-    private Collection<Storemerchandise> storemerchandiseCollection;
+    private Collection<StoreMerchandise> storeMerchandiseCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "store")
     private Collection<Comment> commentCollection;
 
@@ -221,21 +223,21 @@ public class Store implements Serializable {
     }
 
     @XmlTransient
-    public Collection<Promotionscheme> getPromotionschemeCollection() {
-        return promotionschemeCollection;
+    public Collection<PromotionScheme> getPromotionSchemeCollection() {
+        return promotionSchemeCollection;
     }
 
-    public void setPromotionschemeCollection(Collection<Promotionscheme> promotionschemeCollection) {
-        this.promotionschemeCollection = promotionschemeCollection;
+    public void setPromotionSchemeCollection(Collection<PromotionScheme> promotionSchemeCollection) {
+        this.promotionSchemeCollection = promotionSchemeCollection;
     }
 
     @XmlTransient
-    public Collection<Storemerchandise> getStoremerchandiseCollection() {
-        return storemerchandiseCollection;
+    public Collection<StoreMerchandise> getStoreMerchandiseCollection() {
+        return storeMerchandiseCollection;
     }
 
-    public void setStoremerchandiseCollection(Collection<Storemerchandise> storemerchandiseCollection) {
-        this.storemerchandiseCollection = storemerchandiseCollection;
+    public void setStoreMerchandiseCollection(Collection<StoreMerchandise> storeMerchandiseCollection) {
+        this.storeMerchandiseCollection = storeMerchandiseCollection;
     }
 
     @XmlTransient

@@ -1,0 +1,61 @@
+/* line 1, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_3\web\less\css-store-list.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_3\/web\/less\/css-store-list\.less}line{font-family:\000031}}
+.page {
+  margin: 10px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  box-shadow: 0px 0px 20px 3px #D0D0D0;
+  border-radius: 4px;
+  background-color: #ffffff;
+}
+/* line 9, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_3\web\less\css-store-list.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_3\/web\/less\/css-store-list\.less}line{font-family:\000039}}
+#store-wrapper {
+  padding: 10px;
+}
+/* line 12, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_3\web\less\css-store-list.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_3\/web\/less\/css-store-list\.less}line{font-family:\0000312}}
+.singleStore {
+  padding: 10px;
+  border: 1px black;
+  background-color: #ffffff;
+  width: 700px;
+  height: 182px;
+  box-shadow: 0px 0px 20px 3px #D0D0D0;
+}
+/* line 19, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_3\web\less\css-store-list.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_3\/web\/less\/css-store-list\.less}line{font-family:\0000319}}
+.singleStore .store-img {
+  float: left;
+  width: 172px;
+  height: 172px;
+}
+/* line 24, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_3\web\less\css-store-list.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_3\/web\/less\/css-store-list\.less}line{font-family:\0000324}}
+.singleStore .store-img img {
+  width: 100%;
+  height: 100%;
+}
+/* line 29, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_3\web\less\css-store-list.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_3\/web\/less\/css-store-list\.less}line{font-family:\0000329}}
+.singleStore .store-details {
+  float: right;
+  width: 74%;
+  font-size: 14px;
+  text-align: justify;
+}
+/* line 34, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_3\web\less\css-store-list.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_3\/web\/less\/css-store-list\.less}line{font-family:\0000334}}
+.singleStore .store-details .store-title {
+  font-family: monospace;
+  font-size: 42px;
+  color: blueviolet;
+  font-weight: bold;
+}
+/* line 48, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_3\web\less\css-store-list.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_3\/web\/less\/css-store-list\.less}line{font-family:\0000348}}
+param-title {
+  font-weight: bold;
+  font-size: 18px;
+  color: #4d90fe;
+}

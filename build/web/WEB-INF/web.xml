@@ -22,9 +22,13 @@
         </session-timeout>
     </session-config>
     
+    <context-param>
+        <param-name>PU</param-name>
+        <param-value>ProductSearch_3PU</param-value>
+    </context-param>
 
     UserLogin
     <welcome-file-list>
         <welcome-file>index-2.jsp</welcome-file>
     </welcome-file-list>
-    </web-app>
+</web-app>
