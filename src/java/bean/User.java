@@ -1,7 +1,9 @@
 /*
- * To change this template, choose Tools | Templates
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package bean;
 
 import java.io.Serializable;
@@ -21,7 +23,7 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author poonkaho
+ * @author user
  */
 @Entity
 @Table(name = "user")
@@ -72,19 +74,19 @@ public class User implements Serializable {
     @Column(name = "preference")
     private String preference;
     @OneToMany(mappedBy = "administrator")
-    private Collection<Chatroom> chatroomCollection;
+    private Collection<ChatRoom> chatRoomCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
-    private Collection<Chatroom> chatroomCollection1;
+    private Collection<ChatRoom> chatRoomCollection1;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "userID")
     private Collection<Store> storeCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "userID")
     private Collection<Tag> tagCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
-    private Collection<Promotionpreference> promotionpreferenceCollection;
+    private Collection<PromotionPreference> promotionPreferenceCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private Collection<Message> messageCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
-    private Collection<Userstatus> userstatusCollection;
+    private Collection<UserStatus> userStatusCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private Collection<Comment> commentCollection;
 
@@ -194,21 +196,21 @@ public class User implements Serializable {
     }
 
     @XmlTransient
-    public Collection<Chatroom> getChatroomCollection() {
-        return chatroomCollection;
+    public Collection<ChatRoom> getChatRoomCollection() {
+        return chatRoomCollection;
     }
 
-    public void setChatroomCollection(Collection<Chatroom> chatroomCollection) {
-        this.chatroomCollection = chatroomCollection;
+    public void setChatRoomCollection(Collection<ChatRoom> chatRoomCollection) {
+        this.chatRoomCollection = chatRoomCollection;
     }
 
     @XmlTransient
-    public Collection<Chatroom> getChatroomCollection1() {
-        return chatroomCollection1;
+    public Collection<ChatRoom> getChatRoomCollection1() {
+        return chatRoomCollection1;
     }
 
-    public void setChatroomCollection1(Collection<Chatroom> chatroomCollection1) {
-        this.chatroomCollection1 = chatroomCollection1;
+    public void setChatRoomCollection1(Collection<ChatRoom> chatRoomCollection1) {
+        this.chatRoomCollection1 = chatRoomCollection1;
     }
 
     @XmlTransient
@@ -230,12 +232,12 @@ public class User implements Serializable {
     }
 
     @XmlTransient
-    public Collection<Promotionpreference> getPromotionpreferenceCollection() {
-        return promotionpreferenceCollection;
+    public Collection<PromotionPreference> getPromotionPreferenceCollection() {
+        return promotionPreferenceCollection;
     }
 
-    public void setPromotionpreferenceCollection(Collection<Promotionpreference> promotionpreferenceCollection) {
-        this.promotionpreferenceCollection = promotionpreferenceCollection;
+    public void setPromotionPreferenceCollection(Collection<PromotionPreference> promotionPreferenceCollection) {
+        this.promotionPreferenceCollection = promotionPreferenceCollection;
     }
 
     @XmlTransient
@@ -248,12 +250,12 @@ public class User implements Serializable {
     }
 
     @XmlTransient
-    public Collection<Userstatus> getUserstatusCollection() {
-        return userstatusCollection;
+    public Collection<UserStatus> getUserStatusCollection() {
+        return userStatusCollection;
     }
 
-    public void setUserstatusCollection(Collection<Userstatus> userstatusCollection) {
-        this.userstatusCollection = userstatusCollection;
+    public void setUserStatusCollection(Collection<UserStatus> userStatusCollection) {
+        this.userStatusCollection = userStatusCollection;
     }
 
     @XmlTransient

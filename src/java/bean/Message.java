@@ -1,7 +1,9 @@
 /*
- * To change this template, choose Tools | Templates
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package bean;
 
 import java.io.Serializable;
@@ -22,7 +24,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author poonkaho
+ * @author user
  */
 @Entity
 @Table(name = "message")
@@ -48,7 +50,7 @@ public class Message implements Serializable {
     private User user;
     @JoinColumn(name = "roomID", referencedColumnName = "roomID", insertable = false, updatable = false)
     @ManyToOne(optional = false)
-    private Chatroom chatroom;
+    private ChatRoom chatRoom;
 
     public Message() {
     }
@@ -98,12 +100,12 @@ public class Message implements Serializable {
         this.user = user;
     }
 
-    public Chatroom getChatroom() {
-        return chatroom;
+    public ChatRoom getChatRoom() {
+        return chatRoom;
     }
 
-    public void setChatroom(Chatroom chatroom) {
-        this.chatroom = chatroom;
+    public void setChatRoom(ChatRoom chatRoom) {
+        this.chatRoom = chatRoom;
     }
 
     @Override

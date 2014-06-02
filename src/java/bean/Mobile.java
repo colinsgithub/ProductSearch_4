@@ -1,7 +1,9 @@
 /*
- * To change this template, choose Tools | Templates
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package bean;
 
 import java.io.Serializable;
@@ -23,7 +25,7 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author poonkaho
+ * @author user
  */
 @Entity
 @Table(name = "mobile")
@@ -113,48 +115,48 @@ public class Mobile implements Serializable {
         @JoinColumn(name = "mobileID", referencedColumnName = "mobileID")}, inverseJoinColumns = {
         @JoinColumn(name = "WLANTypeID", referencedColumnName = "WLANTypeID")})
     @ManyToMany
-    private Collection<Wlantype> wlantypeCollection;
+    private Collection<WLANType> wLANTypeCollection;
     @ManyToMany(mappedBy = "mobileCollection")
-    private Collection<Keyboardtype> keyboardtypeCollection;
+    private Collection<KeyboardType> keyboardTypeCollection;
     @ManyToMany(mappedBy = "mobileCollection")
-    private Collection<Machineinterface> machineinterfaceCollection;
+    private Collection<MachineInterface> machineInterfaceCollection;
     @JoinTable(name = "mobile_simcardtype", joinColumns = {
         @JoinColumn(name = "mobileID", referencedColumnName = "mobileID")}, inverseJoinColumns = {
         @JoinColumn(name = "SIMCardTypeID", referencedColumnName = "SIMCardTypeID")})
     @ManyToMany
-    private Collection<Simcardtype> simcardtypeCollection;
+    private Collection<SIMCardType> sIMCardTypeCollection;
     @ManyToMany(mappedBy = "mobileCollection")
-    private Collection<Mobilenetworkstandard> mobilenetworkstandardCollection;
+    private Collection<MobileNetworkStandard> mobileNetworkStandardCollection;
     @ManyToMany(mappedBy = "mobileCollection")
-    private Collection<Mobiletype> mobiletypeCollection;
+    private Collection<MobileType> mobileTypeCollection;
     @ManyToMany(mappedBy = "mobileCollection")
-    private Collection<Connectivityandsharing> connectivityandsharingCollection;
+    private Collection<ConnectivityAndSharing> connectivityAndSharingCollection;
     @JoinTable(name = "mobile_sensortype", joinColumns = {
         @JoinColumn(name = "mobileID", referencedColumnName = "mobileID")}, inverseJoinColumns = {
         @JoinColumn(name = "sensorTypeID", referencedColumnName = "sensorTypeID")})
     @ManyToMany
-    private Collection<Sensortype> sensortypeCollection;
+    private Collection<SensorType> sensorTypeCollection;
     @JoinColumn(name = "touchScreenTypeID", referencedColumnName = "touchScreenTypeID")
     @ManyToOne
-    private Touchscreentype touchScreenTypeID;
+    private TouchScreenType touchScreenTypeID;
     @JoinColumn(name = "screenMaterialID", referencedColumnName = "screenMaterialID")
     @ManyToOne(optional = false)
-    private Screenmaterial screenMaterialID;
+    private ScreenMaterial screenMaterialID;
     @JoinColumn(name = "OSID", referencedColumnName = "OSID")
     @ManyToOne(optional = false)
-    private Operatingsystem osid;
+    private OperatingSystem osid;
     @JoinColumn(name = "flashMemoryCardID", referencedColumnName = "flashMemoryCardID")
     @ManyToOne
-    private Flashmemorycard flashMemoryCardID;
+    private FlashMemoryCard flashMemoryCardID;
     @JoinColumn(name = "flashID", referencedColumnName = "flashID")
     @ManyToOne
     private Flash flashID;
     @JoinColumn(name = "CPUManufacturerID", referencedColumnName = "CPUManufacturerID")
     @ManyToOne
-    private Cpumanufacturer cPUManufacturerID;
+    private CPUManufacturer cPUManufacturerID;
     @JoinColumn(name = "CPUCoreTypeID", referencedColumnName = "CPUCoreTypeID")
     @ManyToOne(optional = false)
-    private Cpucoretype cPUCoreTypeID;
+    private CPUCoreType cPUCoreTypeID;
     @JoinColumns({
         @JoinColumn(name = "mobileID", referencedColumnName = "merchandiseID", insertable = false, updatable = false),
         @JoinColumn(name = "categoryID", referencedColumnName = "categoryID")})
@@ -351,106 +353,106 @@ public class Mobile implements Serializable {
     }
 
     @XmlTransient
-    public Collection<Wlantype> getWlantypeCollection() {
-        return wlantypeCollection;
+    public Collection<WLANType> getWLANTypeCollection() {
+        return wLANTypeCollection;
     }
 
-    public void setWlantypeCollection(Collection<Wlantype> wlantypeCollection) {
-        this.wlantypeCollection = wlantypeCollection;
-    }
-
-    @XmlTransient
-    public Collection<Keyboardtype> getKeyboardtypeCollection() {
-        return keyboardtypeCollection;
-    }
-
-    public void setKeyboardtypeCollection(Collection<Keyboardtype> keyboardtypeCollection) {
-        this.keyboardtypeCollection = keyboardtypeCollection;
+    public void setWLANTypeCollection(Collection<WLANType> wLANTypeCollection) {
+        this.wLANTypeCollection = wLANTypeCollection;
     }
 
     @XmlTransient
-    public Collection<Machineinterface> getMachineinterfaceCollection() {
-        return machineinterfaceCollection;
+    public Collection<KeyboardType> getKeyboardTypeCollection() {
+        return keyboardTypeCollection;
     }
 
-    public void setMachineinterfaceCollection(Collection<Machineinterface> machineinterfaceCollection) {
-        this.machineinterfaceCollection = machineinterfaceCollection;
-    }
-
-    @XmlTransient
-    public Collection<Simcardtype> getSimcardtypeCollection() {
-        return simcardtypeCollection;
-    }
-
-    public void setSimcardtypeCollection(Collection<Simcardtype> simcardtypeCollection) {
-        this.simcardtypeCollection = simcardtypeCollection;
+    public void setKeyboardTypeCollection(Collection<KeyboardType> keyboardTypeCollection) {
+        this.keyboardTypeCollection = keyboardTypeCollection;
     }
 
     @XmlTransient
-    public Collection<Mobilenetworkstandard> getMobilenetworkstandardCollection() {
-        return mobilenetworkstandardCollection;
+    public Collection<MachineInterface> getMachineInterfaceCollection() {
+        return machineInterfaceCollection;
     }
 
-    public void setMobilenetworkstandardCollection(Collection<Mobilenetworkstandard> mobilenetworkstandardCollection) {
-        this.mobilenetworkstandardCollection = mobilenetworkstandardCollection;
-    }
-
-    @XmlTransient
-    public Collection<Mobiletype> getMobiletypeCollection() {
-        return mobiletypeCollection;
-    }
-
-    public void setMobiletypeCollection(Collection<Mobiletype> mobiletypeCollection) {
-        this.mobiletypeCollection = mobiletypeCollection;
+    public void setMachineInterfaceCollection(Collection<MachineInterface> machineInterfaceCollection) {
+        this.machineInterfaceCollection = machineInterfaceCollection;
     }
 
     @XmlTransient
-    public Collection<Connectivityandsharing> getConnectivityandsharingCollection() {
-        return connectivityandsharingCollection;
+    public Collection<SIMCardType> getSIMCardTypeCollection() {
+        return sIMCardTypeCollection;
     }
 
-    public void setConnectivityandsharingCollection(Collection<Connectivityandsharing> connectivityandsharingCollection) {
-        this.connectivityandsharingCollection = connectivityandsharingCollection;
+    public void setSIMCardTypeCollection(Collection<SIMCardType> sIMCardTypeCollection) {
+        this.sIMCardTypeCollection = sIMCardTypeCollection;
     }
 
     @XmlTransient
-    public Collection<Sensortype> getSensortypeCollection() {
-        return sensortypeCollection;
+    public Collection<MobileNetworkStandard> getMobileNetworkStandardCollection() {
+        return mobileNetworkStandardCollection;
     }
 
-    public void setSensortypeCollection(Collection<Sensortype> sensortypeCollection) {
-        this.sensortypeCollection = sensortypeCollection;
+    public void setMobileNetworkStandardCollection(Collection<MobileNetworkStandard> mobileNetworkStandardCollection) {
+        this.mobileNetworkStandardCollection = mobileNetworkStandardCollection;
     }
 
-    public Touchscreentype getTouchScreenTypeID() {
+    @XmlTransient
+    public Collection<MobileType> getMobileTypeCollection() {
+        return mobileTypeCollection;
+    }
+
+    public void setMobileTypeCollection(Collection<MobileType> mobileTypeCollection) {
+        this.mobileTypeCollection = mobileTypeCollection;
+    }
+
+    @XmlTransient
+    public Collection<ConnectivityAndSharing> getConnectivityAndSharingCollection() {
+        return connectivityAndSharingCollection;
+    }
+
+    public void setConnectivityAndSharingCollection(Collection<ConnectivityAndSharing> connectivityAndSharingCollection) {
+        this.connectivityAndSharingCollection = connectivityAndSharingCollection;
+    }
+
+    @XmlTransient
+    public Collection<SensorType> getSensorTypeCollection() {
+        return sensorTypeCollection;
+    }
+
+    public void setSensorTypeCollection(Collection<SensorType> sensorTypeCollection) {
+        this.sensorTypeCollection = sensorTypeCollection;
+    }
+
+    public TouchScreenType getTouchScreenTypeID() {
         return touchScreenTypeID;
     }
 
-    public void setTouchScreenTypeID(Touchscreentype touchScreenTypeID) {
+    public void setTouchScreenTypeID(TouchScreenType touchScreenTypeID) {
         this.touchScreenTypeID = touchScreenTypeID;
     }
 
-    public Screenmaterial getScreenMaterialID() {
+    public ScreenMaterial getScreenMaterialID() {
         return screenMaterialID;
     }
 
-    public void setScreenMaterialID(Screenmaterial screenMaterialID) {
+    public void setScreenMaterialID(ScreenMaterial screenMaterialID) {
         this.screenMaterialID = screenMaterialID;
     }
 
-    public Operatingsystem getOsid() {
+    public OperatingSystem getOsid() {
         return osid;
     }
 
-    public void setOsid(Operatingsystem osid) {
+    public void setOsid(OperatingSystem osid) {
         this.osid = osid;
     }
 
-    public Flashmemorycard getFlashMemoryCardID() {
+    public FlashMemoryCard getFlashMemoryCardID() {
         return flashMemoryCardID;
     }
 
-    public void setFlashMemoryCardID(Flashmemorycard flashMemoryCardID) {
+    public void setFlashMemoryCardID(FlashMemoryCard flashMemoryCardID) {
         this.flashMemoryCardID = flashMemoryCardID;
     }
 
@@ -462,19 +464,19 @@ public class Mobile implements Serializable {
         this.flashID = flashID;
     }
 
-    public Cpumanufacturer getCPUManufacturerID() {
+    public CPUManufacturer getCPUManufacturerID() {
         return cPUManufacturerID;
     }
 
-    public void setCPUManufacturerID(Cpumanufacturer cPUManufacturerID) {
+    public void setCPUManufacturerID(CPUManufacturer cPUManufacturerID) {
         this.cPUManufacturerID = cPUManufacturerID;
     }
 
-    public Cpucoretype getCPUCoreTypeID() {
+    public CPUCoreType getCPUCoreTypeID() {
         return cPUCoreTypeID;
     }
 
-    public void setCPUCoreTypeID(Cpucoretype cPUCoreTypeID) {
+    public void setCPUCoreTypeID(CPUCoreType cPUCoreTypeID) {
         this.cPUCoreTypeID = cPUCoreTypeID;
     }
 

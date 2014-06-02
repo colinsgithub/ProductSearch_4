@@ -1,7 +1,9 @@
 /*
- * To change this template, choose Tools | Templates
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package bean;
 
 import java.io.Serializable;
@@ -27,7 +29,7 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author poonkaho
+ * @author user
  */
 @Entity
 @Table(name = "merchandise")
@@ -67,7 +69,7 @@ public class Merchandise implements Serializable {
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "merchandise")
     private Cloth cloth;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "merchandise")
-    private Collection<Storemerchandise> storemerchandiseCollection;
+    private Collection<StoreMerchandise> storeMerchandiseCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "merchandise")
     private Collection<Mobile> mobileCollection;
 
@@ -161,12 +163,12 @@ public class Merchandise implements Serializable {
     }
 
     @XmlTransient
-    public Collection<Storemerchandise> getStoremerchandiseCollection() {
-        return storemerchandiseCollection;
+    public Collection<StoreMerchandise> getStoreMerchandiseCollection() {
+        return storeMerchandiseCollection;
     }
 
-    public void setStoremerchandiseCollection(Collection<Storemerchandise> storemerchandiseCollection) {
-        this.storemerchandiseCollection = storemerchandiseCollection;
+    public void setStoreMerchandiseCollection(Collection<StoreMerchandise> storeMerchandiseCollection) {
+        this.storeMerchandiseCollection = storeMerchandiseCollection;
     }
 
     @XmlTransient

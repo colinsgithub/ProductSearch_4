@@ -1,7 +1,9 @@
 /*
- * To change this template, choose Tools | Templates
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package bean;
 
 import com.google.gson.annotations.Expose;
@@ -25,7 +27,7 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author poonkaho
+ * @author user
  */
 @Entity
 @Table(name = "cloth")
@@ -94,9 +96,9 @@ public class Cloth implements Serializable {
     @OneToOne(optional = false)
     private Merchandise merchandise;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "cloth")
-    private Collection<Uppergarment> uppergarmentCollection;
+    private Collection<UpperGarment> upperGarmentCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "cloth")
-    private Collection<Lowergarment> lowergarmentCollection;
+    private Collection<LowerGarment> lowerGarmentCollection;
 
     public Cloth() {
     }
@@ -224,21 +226,21 @@ public class Cloth implements Serializable {
     }
 
     @XmlTransient
-    public Collection<Uppergarment> getUppergarmentCollection() {
-        return uppergarmentCollection;
+    public Collection<UpperGarment> getUpperGarmentCollection() {
+        return upperGarmentCollection;
     }
 
-    public void setUppergarmentCollection(Collection<Uppergarment> uppergarmentCollection) {
-        this.uppergarmentCollection = uppergarmentCollection;
+    public void setUpperGarmentCollection(Collection<UpperGarment> upperGarmentCollection) {
+        this.upperGarmentCollection = upperGarmentCollection;
     }
 
     @XmlTransient
-    public Collection<Lowergarment> getLowergarmentCollection() {
-        return lowergarmentCollection;
+    public Collection<LowerGarment> getLowerGarmentCollection() {
+        return lowerGarmentCollection;
     }
 
-    public void setLowergarmentCollection(Collection<Lowergarment> lowergarmentCollection) {
-        this.lowergarmentCollection = lowergarmentCollection;
+    public void setLowerGarmentCollection(Collection<LowerGarment> lowerGarmentCollection) {
+        this.lowerGarmentCollection = lowerGarmentCollection;
     }
 
     @Override

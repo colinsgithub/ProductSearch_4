@@ -64,6 +64,70 @@
         <%--javascript for metro--%>
         <%--<script src="js/metro.min.js"></script>--%>
 
+
+        <script>
+            urls = window.location.pathname.split("/");
+            context = urls[1];
+            web = window.location.origin;
+            if (web.toLowerCase().indexOf("localhost") >= 0) {
+                web = window.location.origin + "/" + (window.location.pathname).split("/")[1];
+            }
+            function productAC() {
+
+                $("#changetype-establishment").on("click", function() {
+                    google.maps.event.clearInstanceListeners(document.getElementById("pac-input"));
+                    $("#pac-input").autocomplete({
+                        source: function(request, response) {
+                            $.ajax({
+                                url: "/" + context + "/MainSearch",
+                                dataType: "json",
+                                data: {
+                                    "action": "search",
+                                    "keywords": $("#pac-input").val()
+                                },
+                                success: function(data) {
+                                    response($.map(data, function(item) {
+                                        return {
+                                            name: item.name,
+                                            count: item.count,
+                                            categoryID: item.categoryID
+                                        };
+                                    }));
+                                }
+                            });
+                        }
+                    }).data("ui-autocomplete")._renderItem = function(ul, item) {
+                        var params = {
+                            "categoryID": item.categoryID,
+                            "keywords": $("#search-bar input").val()
+                        };
+                        return $("<li>").data("ui-autocomplete-item", item)
+                                .append("<a href='/" + context + "/MainSearch?categoryID=" + item.categoryID + "&keywords=" + $("#search-bar input").val() + "'><i class='ui-autocomplete-item-name'>"
+                                        + item.name + "</u><b class='ui-autocomplete-item-count'> "
+                                        + item.count + " Result(s)</b></a>")
+                                .appendTo(ul);
+                    };
+                }, true);
+            }
+            function accurateSearch() {
+                window.location.href = web + "/search/ProductSearch.jsp";
+            }
+            function submitTh() {
+                window.location.href = web + "/MainSearch?action=getResultA&keywords=" + $("#pac-input").val();
+            }
+        </script>
+        <script>
+            $(function() {
+                $("#accurateSearch").click(function() {
+                    accurateSearch();
+                });
+                productAC();
+            });
+        </script>
+        <script>
+        </script>
+        <link rel="stylesheet" href="css/css-merchandise-search.css">
+
         <script>
             //init slider bar
             $(function() {
@@ -1523,14 +1587,8 @@
     <body style=" overflow-x: hidden;overflow-y: hidden; ">
         <input id="pac-input" class="controls" type="text" style=" left: 15px;" placeholder="Enter a Product/Location">
         <div id="type-selector" class="controls">
-            <input type="radio" name="type" id="changetype-all" checked="checked">
-            <label for="changetype-all">All</label>
-
-            <input type="radio" name="type" id="changetype-establishment">
-            <label for="changetype-establishment">Product</label>
-
-            <input type="radio" name="type" id="changetype-geocode">
-            <label for="changetype-geocode">Location</label>
+            <button type="button" class="btn btn-default" onclick="submitTh()">Search Product</button>
+            <button type="button" class="btn btn-default">Search Location</button>
         </div>
 
         <div id="map-canvas"></div>
@@ -1782,7 +1840,7 @@
         </script>
         <script>
             document.querySelector('#chat').addEventListener('click', function() {
-                
+
                 $.ajax({
                     url: 'HandleTag',
                     type: 'POST',
@@ -1792,11 +1850,11 @@
                             $('#personalInfo').click();
                         } else {
                             var host = document.location.host;
-                            var _userID ="${user.userID}";
-                            var _userPW ="${user.password}";
-                            var __userID=window.btoa(_userID);
-                            var __userPW=window.btoa(_userPW);
-                            window.open('http://' + host + '/WS/DoLoginServlet?AAA='+__userID+'&BBB='+__userPW, 'Chatting Window', 'width=750, height=500');
+                            var _userID = "${user.userID}";
+                            var _userPW = "${user.password}";
+                            var __userID = window.btoa(_userID);
+                            var __userPW = window.btoa(_userPW);
+                            window.open('http://' + host + '/WS/DoLoginServlet?AAA=' + __userID + '&BBB=' + __userPW, 'Chatting Window', 'width=750, height=500');
                         }
                     }});
 

@@ -1,0 +1,642 @@
+/* line 1, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\000031}}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+form,
+fieldset,
+legend,
+button,
+input,
+textarea,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+/* line 6, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\000036}}
+font {
+  color: black;
+}
+/* line 9, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\000039}}
+form {
+  display: block;
+  margin-top: 0em;
+}
+/* line 15, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\0000315}}
+#wrapper-main {
+  width: 900px;
+  min-height: 800px;
+  margin: 0 auto;
+  box-shadow: 0px 0px 20px 3px #D0D0D0;
+}
+/* line 21, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\0000321}}
+#wrapper-header {
+  width: 100%;
+  height: 120px;
+}
+/* line 27, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\0000327}}
+#header-content {
+  margin: 10 auto;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 0px;
+}
+/* line 32, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\0000332}}
+#header-content #page-logo {
+  display: block;
+  width: 220px;
+  height: 60px;
+  margin-left: 28px;
+  float: left;
+  margin-top: 8px;
+  text-decoration: none;
+}
+/* line 40, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\0000340}}
+#header-content #page-logo .font-logo {
+  border-top-left-radius: 48px;
+  border-bottom-right-radius: 48px;
+  padding-top: 16px;
+  text-align: center;
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  color: white;
+  background-color: #AD8EA5;
+}
+/* line 53, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\0000353}}
+#header-content #search-page {
+  font: 12px tahoma, arial, 'Hiragino Sans GB', '\5b8b\4f53', sans-serif;
+  float: right;
+  padding-right: 22px;
+  width: 540px!important;
+  padding-top: 14px;
+  z-index: 2;
+  overflow: hidden;
+}
+/* line 61, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\0000361}}
+#header-content #search-page .search-form {
+  border: solid #DB2020;
+  border-width: 2px;
+  border-radius: 2px;
+}
+/* line 65, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\0000365}}
+#header-content #search-page .search-form fieldset {
+  border: 0px;
+}
+/* line 68, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\0000368}}
+#header-content #search-page .search-form button {
+  height: 28px;
+  line-height: 28px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 90px;
+  border: 0;
+  font-size: 18px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #DD2929;
+  overflow: hidden;
+  padding: auto 4px;
+}
+/* line 82, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\0000382}}
+#header-content #search-page .search-form button i {
+  font-size: 22px;
+  margin: auto 4px;
+}
+/* line 87, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\0000387}}
+#header-content #search-page .search-form .search-form-input {
+  font: 12px tahoma, arial, 'Hiragino Sans GB', '\5b8b\4f53', sans-serif;
+  height: 28px;
+  line-height: 28px;
+  background: #fff;
+  position: relative;
+}
+/* line 93, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\0000393}}
+#header-content #search-page .search-form .search-form-input .s-combobox {
+  font-size: 12px;
+}
+/* line 96, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\0000396}}
+#header-content #search-page .search-form .search-form-input .s-combobox .s-combobox-input-wrap label {
+  font-size: 12px;
+  position: absolute;
+  left: 8px;
+  top: 0;
+  z-index: 1;
+  padding-top: 6px;
+  font: 12px tahoma, arial, 'Hiragino Sans GB', '\5b8b\4f53', sans-serif;
+}
+/* line 105, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003105}}
+#header-content #search-page .search-form .search-form-input .s-combobox .s-combobox-input-wrap #keywords {
+  background: 0 0;
+  height: 20px;
+  line-height: 20px;
+  padding-bottom: 3px;
+}
+/* line 111, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003111}}
+#header-content #search-page .search-form .search-form-input .s-combobox .s-combobox-input-wrap .s-combobox-input {
+  width: 417px!important;
+  color: #000;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+  line-height: 20px;
+  padding: 5px 3px 5px 5px;
+  outline: 0;
+  border: 0;
+  font-weight: 900;
+  box-sizing: content-box;
+}
+/* line 124, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003124}}
+#header-content #search-page .search-form .search-form-input .s-combobox .s-combobox-input-wrap .s-combobox-placeholder {
+  color: #666666;
+  visibility: visible;
+}
+/* line 132, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003132}}
+#header-content #search-page .hot-q {
+  padding-top: 6px;
+  padding: 4px 0 0;
+  margin-left: -4px;
+  height: 20px;
+  overflow: hidden;
+  width: 100%;
+}
+/* line 139, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003139}}
+#header-content #search-page .hot-q .hot-q-hl {
+  display: inline-block;
+  border-left: 1px solid #ccc;
+  line-height: 1.1;
+  padding: 0 8px;
+}
+/* line 144, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003144}}
+#header-content #search-page .hot-q .hot-q-hl a {
+  color: #929292;
+  text-decoration: none;
+}
+/* line 147, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003147}}
+#header-content #search-page .hot-q .hot-q-hl a:hover {
+  color: tomato;
+  text-decoration: underline;
+}
+/* line 151, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003151}}
+#header-content #search-page .hot-q .hot-q-hl a:active {
+  color: tomato;
+}
+/* line 154, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003154}}
+#header-content #search-page .hot-q .hot-q-hl a:visited {
+  color: tomato;
+  text-decoration: underline;
+}
+/* line 163, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003163}}
+#header-bar {
+  width: 100%;
+  height: 28px;
+  background: #E61852;
+  margin-top: 76px;
+}
+/* line 169, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003169}}
+#header-bar ul {
+  margin: auto 20px;
+  z-index: 10;
+}
+/* line 173, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003173}}
+#header-bar .nav {
+  list-style: none;
+  float: left;
+}
+/* line 176, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003176}}
+#header-bar .nav li {
+  float: left;
+}
+/* line 178, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003178}}
+#header-bar .nav li a {
+  width: auto;
+  height: 28px;
+  line-height: 28px;
+  padding: 4px auto;
+  display: inline;
+  color: white !important;
+  padding: 6px 60px;
+}
+/* line 186, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003186}}
+#header-bar .nav li a:hover {
+  background-color: #F88787;
+  color: black !important;
+  cursor: pointer;
+}
+/* line 193, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003193}}
+#header-bar .nav .nav-item {
+  position: relative;
+  zoom: 1;
+  z-index: 12;
+}
+/* line 197, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003197}}
+#header-bar .nav .nav-item .nav-item-arrow {
+  padding-left: 4px;
+  padding-right: 42px;
+}
+/* line 201, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003201}}
+#header-bar .nav .nav-item .nav-list {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 28px;
+  _margin-right: 0;
+  padding-bottom: 5px;
+  overflow: hidden;
+  zoom: 1;
+  background-color: rgba(230, 24, 82, 0.82);
+}
+/* line 211, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003211}}
+#header-bar .nav .nav-item .nav-list a {
+  width: 200px;
+  float: none;
+  padding: 0 0 0 17px;
+  display: block;
+  white-space: nowrap;
+  height: 26px;
+  margin-top: 4px;
+  font: 12px/26px arial;
+  overflow: hidden;
+}
+/* line 222, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003222}}
+#header-bar .nav .nav-item .nav-list .nav-list-2 {
+  display: none;
+}
+/* line 224, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003224}}
+#header-bar .nav .nav-item .nav-list .nav-list-2 a {
+  padding-left: 32px;
+}
+/* line 232, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003232}}
+#wrapper-body {
+  width: 100%;
+  min-height: 500px;
+  position: relative;
+  margin-top: -6px;
+}
+/* line 237, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003237}}
+#wrapper-body .carousel-wrapper {
+  background-color: white;
+  margin: 0 auto;
+  width: 97%;
+  height: 460px;
+}
+/* line 242, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003242}}
+#wrapper-body .carousel-wrapper .carousel-inner {
+  width: 100%;
+  height: 100%;
+}
+/* line 246, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003246}}
+#wrapper-body .carousel-wrapper .carousel-inner .item img {
+  width: 100%;
+  height: 100%;
+}
+/* line 255, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003255}}
+#wrapper-body #filterNav {
+  display: none;
+  margin: 16px auto;
+  width: 700px;
+  position: relative;
+  border-top: 1px #D1CCC7 dotted;
+}
+/* line 262, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003262}}
+#wrapper-body #filterNav .filterBar {
+  background-color: #F7F5F5;
+  border-color: #E6E2E1 #E6E2E1 #D1CCC7;
+  border-style: solid solid dotted;
+  border-width: 0 1px 1px;
+  zoom: 1;
+  overflow: hidden;
+  clear: both;
+}
+/* line 271, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003271}}
+#wrapper-body #filterNav .attrKey {
+  float: left;
+  padding: 7px 0 0;
+  width: 20%;
+  color: #B0A59F;
+  text-indent: 13px;
+}
+/* line 278, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003278}}
+#wrapper-body #filterNav .attrValues {
+  position: relative;
+  float: left;
+  background-color: #FFF;
+  width: 80%;
+  padding: 4px 0 0;
+  overflow: hidden;
+}
+/* line 286, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003286}}
+#wrapper-body #filterNav .attrValue_ul {
+  position: relative;
+  margin-right: 105px;
+  margin-left: 25px;
+  height: 25px;
+  display: table;
+  content: "";
+  overflow: hidden;
+  clear: both;
+}
+/* line 296, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003296}}
+#wrapper-body #filterNav .attrValue_ul li {
+  float: left;
+  height: 22px;
+  line-height: 22px;
+  margin: 0 25px 10px 0;
+}
+/* line 303, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003303}}
+#wrapper-body .q-contions {
+  overflow: hidden;
+  min-height: 100px;
+  padding: 4px;
+}
+/* line 308, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003308}}
+#wrapper-body .q-conditions-value {
+  width: 100%;
+  height: 40px;
+  padding-top: 6px;
+}
+/* line 314, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003314}}
+#wrapper-body #searchResult {
+  margin: 16px auto;
+  width: 720px;
+  height: 320px;
+}
+/* line 319, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003319}}
+#wrapper-body #searchResult .merchandise {
+  border-radius: 2px;
+  position: relative;
+  float: left;
+  margin: 10px;
+  width: 160px;
+}
+/* line 325, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003325}}
+#wrapper-body #searchResult .merchandise .m_title {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+/* line 330, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003330}}
+#wrapper-body #searchResult .merchandise img {
+  width: 160px;
+  height: 194px;
+}
+/* line 334, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003334}}
+#wrapper-body #searchResult .merchandise .m_price {
+  color: red;
+  font-size: 18px;
+}
+/* line 338, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003338}}
+#wrapper-body #searchResult .merchandise .m_name {
+  font-size: 10px;
+}
+/* line 342, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003342}}
+#wrapper-body #searchResult .merchandise .m_detail {
+  display: none;
+}
+/* line 347, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003347}}
+#wrapper-body .condition-tag {
+  background: #DA004E;
+  height: 32px;
+  color: white;
+  border: 1px black;
+  padding: 6px 14px;
+  border-radius: 3px;
+}
+/* line 355, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003355}}
+#wrapper-body .carousel-control {
+  height: 100% !important;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.1) 100%) !important;
+}
+/* line 363, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003363}}
+.ui-autocomplete-item-name {
+  font-weight: bold;
+  font-style: normal;
+  font-size: 14px;
+}
+/* line 368, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003368}}
+.ui-autocomplete-item-count {
+  font-style: normal;
+  text-align: right;
+  float: right;
+  position: relative;
+  right: 0;
+  color: #cccccc;
+  font-size: 8px;
+}
+/* line 380, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003380}}
+.ui-menu-item:hover {
+  background-color: #00cccc;
+}
+/* line 383, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003383}}
+.ui-menu-item a:hover {
+  background-color: #00cccc;
+}
+/* line 389, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003389}}
+.ui-autocomplete:hover {
+  background-color: #00cccc;
+}
+/* line 393, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003393}}
+.fa-rotate-45 {
+  transform: rotate(45deg);
+}
+/* line 396, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003396}}
+.fa-cross-circle {
+  border-radius: 20px;
+  padding: 0px 4px;
+  font-family: initial;
+  font-weight: normal;
+  font-style: normal;
+  font-weight: bold;
+  height: 40px;
+  width: 40px;
+  font-size: 2px;
+  margin-left: 6px;
+  background-color: white;
+  color: red;
+}
+/* line 411, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003411}}
+.ls_item {
+  position: relative;
+  display: inline-block;
+  vertical-align: sub;
+}
+/* line 416, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003416}}
+.btn {
+  border: 1px black;
+  border-radius: 2px;
+  padding: 2px 6px;
+  padding-bottom: 4px;
+}
+/* line 422, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003422}}
+#searchBar {
+  display: block;
+  margin: 16px auto;
+  width: 700px;
+  height: 30px;
+  background: #DA004E;
+  border-radius: 4px;
+}
+/* line 430, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003430}}
+#searchBar ol {
+  line-height: 20px;
+}
+/* line 433, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003433}}
+#sb_txtbox {
+  width: 520px;
+  margin-left: 10px;
+  border-radius: 4px;
+  padding: 0 4px;
+}
+/* line 439, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003439}}
+#sb_btn {
+  width: fit-content;
+  padding: 2px 6px;
+}
+/* line 443, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003443}}
+#sb_output {
+  width: 700px;
+  margin: 0 auto;
+}
+/* line 447, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003447}}
+.page {
+  margin: 10px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  box-shadow: 0px 0px 20px 3px #D0D0D0;
+  border-radius: 4px;
+  background-color: #ffffff;
+}
+/* line 455, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003455}}
+.a-tag {
+  width: 120px;
+  height: 60px;
+  font-size: 32px;
+  background-color: #0069d3;
+  color: white;
+  margin: 10 20;
+}
+/* line 463, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003463}}
+.search-form-input-button {
+  height: 28px;
+  line-height: 28px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 90px;
+  border: 0;
+  cursor: pointer;
+  color: #fff;
+  background-color: #DD2929;
+  overflow: hidden;
+  text-align: center;
+  font-size: 28px;
+  text-decoration: none;
+}
+/* line 480, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003480}}
+.search-form-input-button:hover {
+  background-color: #C70E0E;
+}
+/* line 483, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003483}}
+.wrapper-show-result {
+  margin: 20px;
+  padding: 6px;
+  border: 1px black;
+}
+/* line 488, C:\Users\user\Pictures\Documents\GitHub\ProductSearch_4\web\less\css-merchandise-search.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/user\/Pictures\/Documents\/GitHub\/ProductSearch_4\/web\/less\/css-merchandise-search\.less}line{font-family:\00003488}}
+.nav-ii {
+  background-color: #F8F8F8;
+}
