@@ -4,20 +4,28 @@
  */
 package servlet;
 
+import bean.Category;
 import bean.Merchandise;
 import bean.Mobile;
 import bean.Store;
 import bean.Storemerchandise;
 import bean.Tag;
+import bean.User;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.util.List;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.persistence.EntityManager;
@@ -26,10 +34,13 @@ import javax.persistence.Persistence;
 import javax.persistence.Query;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -38,7 +49,10 @@ import org.json.JSONObject;
  * @author poonkaho
  */
 @WebServlet(name = "HandleStore", urlPatterns = {"/HandleStore"})
+@MultipartConfig
 public class HandleStore extends HttpServlet {
+
+    private final static Logger LOGGER = Logger.getLogger(HandleStore.class.getCanonicalName());
 
     /**
      *
@@ -97,24 +111,44 @@ public class HandleStore extends HttpServlet {
             RequestDispatcher rd;
             rd = getServletContext().getRequestDispatcher("/index-2.jsp");
             rd.forward(request, response);
-        } else if ("list2".equalsIgnoreCase(action)) {
+        } else if ("requestAStoreRedirectToMap".equalsIgnoreCase(action)) {
             //String storeId = request.getParameter("storeId");
-
+            String storeId = request.getParameter("storeId");
             EntityManagerFactory factory = Persistence.createEntityManagerFactory("ProductSearch_3PU");
             EntityManager em = factory.createEntityManager();
             em.getTransaction().begin();
-            Query q = em.createNamedQuery("Store.findAll", Store.class);
-            List<Store> stores = q.getResultList();
 
-            ArrayList x = new ArrayList(stores);
-            request.setAttribute("stores", x);
+            Store store = em.find(Store.class, Integer.parseInt(storeId));
+            ArrayList<Store> stores = new ArrayList();
+            stores.add(store);
+            request.setAttribute("stores", stores);
             //Store result = em.find(Store.class, Integer.parseInt(storeId));
             em.getTransaction().commit();
             em.close();
             factory.close();
             RequestDispatcher rd;
-            rd = getServletContext().getRequestDispatcher("/index.jsp");
+            rd = getServletContext().getRequestDispatcher("/index-2.jsp");
             rd.forward(request, response);
+
+        } else if ("getAStoreWhole".equalsIgnoreCase(action)) {
+            String storeId = request.getParameter("storeId");
+            try {
+                EntityManagerFactory factory = Persistence.createEntityManagerFactory("ProductSearch_3PU");
+                EntityManager em = factory.createEntityManager();
+                em.getTransaction().begin();
+                Store store = em.find(Store.class, Integer.parseInt(storeId));
+                em.getTransaction().commit();
+                em.close();
+                factory.close();
+
+                RequestDispatcher rd;
+                rd = getServletContext().getRequestDispatcher("/storeInfo.jsp");
+                rd.forward(request, response);
+            } catch (Exception e) {
+                Logger.getLogger(HandleTag.class.getName()).log(Level.SEVERE, null);
+            } finally {
+                out.close();
+            }
 
         } else if ("getAStoreProductList".equalsIgnoreCase(action)) {
             String storeId = request.getParameter("storeId");
@@ -164,6 +198,7 @@ public class HandleStore extends HttpServlet {
                 jsonObject.put("data", array);
                 out.println(jsonObject);
 
+
             } catch (Exception e) {
                 Logger.getLogger(HandleTag.class.getName()).log(Level.SEVERE, null);
             } finally {
@@ -194,6 +229,106 @@ public class HandleStore extends HttpServlet {
             } finally {
                 out.close();
             }
+        } else if ("newStore".equalsIgnoreCase(action)) {
+            EntityManagerFactory factory = Persistence.createEntityManagerFactory("ProductSearch_3PU");
+            EntityManager em = factory.createEntityManager();
+            em.getTransaction().begin();
+            Query q = em.createNamedQuery("Category.findAll", Category.class);
+            List<Category> x = q.getResultList();
+            ArrayList<Category> categories = new ArrayList(x);
+            request.setAttribute("categories", categories);
+            em.getTransaction().commit();
+            em.close();
+            factory.close();
+            RequestDispatcher rd;
+            rd = getServletContext().getRequestDispatcher("/newStore.jsp");
+            rd.forward(request, response);
+        } else if ("newStoreWithValue".equalsIgnoreCase(action)) {
+            EntityManagerFactory factory = Persistence.createEntityManagerFactory("ProductSearch_3PU");
+            EntityManager em = factory.createEntityManager();
+            em.getTransaction().begin();
+
+            Store store = new Store();
+
+            store.setStoreName(request.getParameter("storeName"));
+            store.setAddress(request.getParameter("address"));
+            String category = request.getParameter("category");
+            store.setCategoryID(em.find(Category.class, Integer.parseInt(category)));
+
+            store.setPhoneNumber(Integer.parseInt(request.getParameter("phoneNumber")));
+            store.setRank(60);
+            store.setStoreDesc(request.getParameter("storeDesc"));
+            Date date = new Date();
+            date.setDate(Integer.parseInt(request.getParameter("storeCreateTime").replace("-", "")));
+            store.setStoreCreateTime(new Date());
+            store.setLatitude(Double.parseDouble(request.getParameter("lat")));
+            store.setLongitude(Double.parseDouble(request.getParameter("lng")));
+
+            // Create path components to save the file
+            String path = getServletContext().getRealPath("/") + "avatar";
+            //String path = "fileUpload"; 
+            Part filePart = request.getPart("file");
+            String fileName = getFileName(filePart);
+
+            OutputStream out2 = null;
+            InputStream filecontent = null;
+            final PrintWriter writer = response.getWriter();
+
+            try {
+                out2 = new FileOutputStream(new File(path + File.separator
+                        + fileName));
+                filecontent = filePart.getInputStream();
+
+                int read = 0;
+                final byte[] bytes = new byte[1024];
+
+                while ((read = filecontent.read(bytes)) != -1) {
+                    out2.write(bytes, 0, read);
+                }
+                writer.println("New file " + fileName + " created at " + path);
+                LOGGER.log(Level.INFO, "File{0}being uploaded to {1}",
+                        new Object[]{fileName, path});
+            } catch (FileNotFoundException fne) {
+                writer.println("You either did not specify a file to upload or are "
+                        + "trying to upload a file to a protected or nonexistent "
+                        + "location.");
+                writer.println("<br/> ERROR: " + fne.getMessage());
+
+                LOGGER.log(Level.SEVERE, "Problems during file upload. Error: {0}",
+                        new Object[]{fne.getMessage()});
+            }
+            HttpSession httpSession = request.getSession(false);
+            User user = (User) httpSession.getAttribute("user");
+            store.setUserID(user);
+            String imgPath = ("avatar" + File.separator + fileName);
+            store.setStoreAvatar(imgPath);
+            em.persist(store);
+            User newUser = em.find(User.class, user.getUserID());
+            httpSession.setAttribute("user", newUser);
+            //renew the bean.user in user
+
+            //User user = em.find(User.class, userId);
+            em.getTransaction().commit();
+            em.close();
+            factory.close();
+
+            RequestDispatcher rd;
+            rd = getServletContext().getRequestDispatcher("/HandleUser?action=getUserInfo");
+            rd.forward(request, response);
+        } else {
+            out.println("no such action");
         }
+    }
+
+    private String getFileName(final Part part) {
+        final String partHeader = part.getHeader("content-disposition");
+        LOGGER.log(Level.INFO, "Part Header = {0}", partHeader);
+        for (String content : part.getHeader("content-disposition").split(";")) {
+            if (content.trim().startsWith("filename")) {
+                return content.substring(
+                        content.indexOf('=') + 1).trim().replace("\"", "");
+            }
+        }
+        return null;
     }
 }
