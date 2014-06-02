@@ -68,9 +68,9 @@
             //init slider bar
             $(function() {
                 $("#slider").slider({
-                    value: 500,
+                    value: 9600,
                     min: 0,
-                    max: 2400,
+                    max: 19200,
                     step: 1,
                     slide: function(event, ui) {
                         cityCircle.setRadius(ui.value);
@@ -121,7 +121,7 @@
                 if (navigator.geolocation) {
 
                     var mapOptions = {
-                        zoom: 16,
+                        zoom: 12,
                         disableDefaultUI: true,
                         panControl: true,
                         streetViewControl: true
@@ -159,7 +159,7 @@
                 String storeId = "";
                 ArrayList<Store> stores = null;
                 int size = 0;
-
+                
                 if (request.getAttribute("stores") != null) {
                     stores = (ArrayList<Store>) request.getAttribute("stores");
                     size = stores.size();
@@ -199,8 +199,11 @@
                     }
                     out.println("createList();");
                 }
+
             %>
             }
+            
+            
             function dropMarker(latLngB) {
                 if (markerFilterList[idenClassOfStore(storeRank)] === null) {
                     return;
@@ -418,7 +421,7 @@
 
                         infoString += "<tr><td style='display: flex;'><img style='height:25px;' src='image/compasses.png'/><div style='margin: auto 0px auto 10px;'>" + markersArray[i].distance + "m</div></td></tr>";
                         infoString += "</div></td></tr>" +
-                                "<tr><td><button class='default' id='enterStore' storeId='" + markersArray[i].storeID + "' onclick='directEnterStore(this);' style='width: 100%;'>Enter Store</button></td></tr>" +
+                                "<tr><td><button class='default' id='enterStore' storeId='" + markersArray[i].storeID + "' onclick='viewMoreDetail(this);' style='width: 100%;'>Enter Store</button></td></tr>" +
                                 "<tr><td><button class='default' onclick='sizeCenterPane();' style='width: 100%;'>Stores List</button></td></tr>" +
                                 //"<tr><td><a href=\"javascript:calcRoute(this);" + "\" x='" + "happy" + "'>Direct</a></td></tr>" +
                                 "<tr><td><button class='default' id='comment' storeId='" + markersArray[i].storeID + "' onclick='comment(this);' style='width: 100%;'>Comment</button></td></tr>" +
@@ -947,7 +950,7 @@
                     var pos = new google.maps.LatLng(position.coords.latitude,
                             position.coords.longitude);
                     map.setCenter(pos);
-                    setCircle(500, pos);
+                    setCircle(9600, pos);
                     marker1 = new MarkerWithLabel({
                         position: pos,
                         draggable: true,

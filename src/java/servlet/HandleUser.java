@@ -142,32 +142,26 @@ public class HandleUser extends HttpServlet {
         } else if ("getEditCustomer".equalsIgnoreCase(action)) { // call the query db to get retrieve for all customer
             String id = request.getParameter("id");
             if (id != null) {
-
-
-
                 RequestDispatcher rd;
                 rd = getServletContext().getRequestDispatcher("/editCustomer.jsp");
                 rd.forward(request, response);
             }
         } else if ("getUserInfo".equalsIgnoreCase(action)) {
             HttpSession httpSession = request.getSession();
-            User user = (User) httpSession.getAttribute("user");
-            
-
+            User user = (User) httpSession.getAttribute("user");  
             EntityManagerFactory factory = Persistence.createEntityManagerFactory("ProductSearch_3PU");
             EntityManager em = factory.createEntityManager();
             em.getTransaction().begin();
-
             em.getTransaction().commit();
             em.close();
             factory.close();
-
             request.setAttribute("user", user);
-
             RequestDispatcher rd;
             rd = getServletContext().getRequestDispatcher("/personalInfo.jsp");
             rd.forward(request, response);
         } else if ("updateUser".equalsIgnoreCase(action)) {
+            System.out.println("Start");
+            System.out.println(request);
             String colum = request.getParameter("name");
             String value = request.getParameter("value");
             
@@ -189,11 +183,9 @@ public class HandleUser extends HttpServlet {
             */
             
             User newUser = em.find(User.class, user.getUserID());
-            
             em.getTransaction().commit();
             em.close();
             factory.close();
-            
             httpSession.setAttribute("user", newUser);
 
         } else if("viewOtherUser".equalsIgnoreCase(action)) {} 

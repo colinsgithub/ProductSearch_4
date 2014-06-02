@@ -1,0 +1,52 @@
+/**
+ * @license
+ * MyFonts Webfont Build ID 2761614, 2014-03-05T08:07:42-0500
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: Littera Plain Regular by ABSTRKT
+ * URL: http://www.myfonts.com/fonts/abstrkt/littera-plain/regular/
+ * 
+ * Webfont: Littera Plain Bold by ABSTRKT
+ * URL: http://www.myfonts.com/fonts/abstrkt/littera-plain/bold/
+ * 
+ * Webfont: Littera Plain Light by ABSTRKT
+ * URL: http://www.myfonts.com/fonts/abstrkt/littera-plain/light/
+ * 
+ * Webfont: Littera Plain Book by ABSTRKT
+ * URL: http://www.myfonts.com/fonts/abstrkt/littera-plain/book/
+ * 
+ * Webfont: Littera Plain Medium by ABSTRKT
+ * URL: http://www.myfonts.com/fonts/abstrkt/littera-plain/medium/
+ * 
+ * 
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=2761614
+ * Licensed pageviews: 10,000
+ * Webfonts copyright: Copyright (c) 2008 by abstrkt. All rights reserved.
+ * 
+ * © 2014 MyFonts Inc
+*/
+
+
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("http://hello.myfonts.net/count/2a238e");
+
+  
+@font-face {font-family: 'LitteraPlainRegular';src: url('webfonts/2A238E_0_0.eot');src: url('webfonts/2A238E_0_0d41d.eot?#iefix') format('embedded-opentype'),url('webfonts/2A238E_0_0.woff') format('woff'),url('webfonts/2A238E_0_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'LitteraPlainBold';src: url('webfonts/2A238E_1_0.eot');src: url('webfonts/2A238E_1_0d41d.eot?#iefix') format('embedded-opentype'),url('webfonts/2A238E_1_0.woff') format('woff'),url('webfonts/2A238E_1_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'LitteraPlainLight';src: url('webfonts/2A238E_2_0.eot');src: url('webfonts/2A238E_2_0d41d.eot?#iefix') format('embedded-opentype'),url('webfonts/2A238E_2_0.woff') format('woff'),url('webfonts/2A238E_2_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'LitteraPlainBook';src: url('webfonts/2A238E_3_0.eot');src: url('webfonts/2A238E_3_0d41d.eot?#iefix') format('embedded-opentype'),url('webfonts/2A238E_3_0.woff') format('woff'),url('webfonts/2A238E_3_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'LitteraPlainMedium';src: url('webfonts/2A238E_4_0.eot');src: url('webfonts/2A238E_4_0d41d.eot?#iefix') format('embedded-opentype'),url('webfonts/2A238E_4_0.woff') format('woff'),url('webfonts/2A238E_4_0.ttf') format('truetype');}
+ 
