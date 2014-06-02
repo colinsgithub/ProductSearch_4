@@ -76,8 +76,6 @@ public class HandleUser extends HttpServlet {
          String dbUrl = this.getServletContext().getInitParameter("dbUrl");
          */
 
-
-
     }
 
     private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -90,7 +88,6 @@ public class HandleUser extends HttpServlet {
             EntityManager em = factory.createEntityManager();
             em.getTransaction().begin();
 
-
             User user = em.find(User.class, userId);
             em.getTransaction().commit();
             em.close();
@@ -99,12 +96,13 @@ public class HandleUser extends HttpServlet {
                 if (user.getPassword().equals(request.getParameter("password"))) {
                     HttpSession httpSession = request.getSession(true);
                     httpSession.setAttribute("user", user);
-
-
+                    //request.getRequestDispatcher("index-2.jsp").forward(request, response);
                     response.getWriter().print("true");
                 } else {
                     response.getWriter().print("false");
                 }
+                //request.getRequestDispatcher("index-2.jsp").forward(request, response);
+
             } catch (NullPointerException e) {
                 response.getWriter().print("false");
             }
@@ -124,7 +122,6 @@ public class HandleUser extends HttpServlet {
             map.put("credit", user.getCredit());
             map.put("role", user.getRole());
 
-
             JSONObject jsonObject = new JSONObject();
             try {
                 jsonObject.put("user", map);
@@ -139,6 +136,8 @@ public class HandleUser extends HttpServlet {
             httpSession.invalidate();
 
             response.getWriter().print("true");
+            //response.sendRedirect("index-2.jsp");
+            //request.getRequestDispatcher("index-2.jsp").forward(request, response);
         } else if ("getEditCustomer".equalsIgnoreCase(action)) { // call the query db to get retrieve for all customer
             String id = request.getParameter("id");
             if (id != null) {
@@ -148,7 +147,7 @@ public class HandleUser extends HttpServlet {
             }
         } else if ("getUserInfo".equalsIgnoreCase(action)) {
             HttpSession httpSession = request.getSession();
-            User user = (User) httpSession.getAttribute("user");  
+            User user = (User) httpSession.getAttribute("user");
             EntityManagerFactory factory = Persistence.createEntityManagerFactory("ProductSearch_3PU");
             EntityManager em = factory.createEntityManager();
             em.getTransaction().begin();
@@ -164,7 +163,7 @@ public class HandleUser extends HttpServlet {
             System.out.println(request);
             String colum = request.getParameter("name");
             String value = request.getParameter("value");
-            
+
             HttpSession httpSession = request.getSession(false);
             User user = (User) httpSession.getAttribute("user");
 
@@ -177,22 +176,19 @@ public class HandleUser extends HttpServlet {
             updateQuery.setParameter("userID", user.getUserID());
             int updated = updateQuery.executeUpdate();
             /*
-            User newUser = em.find(User.class, user.getUserID());
-            newUser.setUserName(value);
-            em.merge(newUser);
-            */
-            
+             User newUser = em.find(User.class, user.getUserID());
+             newUser.setUserName(value);
+             em.merge(newUser);
+             */
+
             User newUser = em.find(User.class, user.getUserID());
             em.getTransaction().commit();
             em.close();
             factory.close();
             httpSession.setAttribute("user", newUser);
 
-        } else if("viewOtherUser".equalsIgnoreCase(action)) {} 
-            
-        
-        
-        else {
+        } else if ("viewOtherUser".equalsIgnoreCase(action)) {
+        } else {
             PrintWriter out = response.getWriter();
             out.println("HandleUser:No such action!!!");
         }

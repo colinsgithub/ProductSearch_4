@@ -159,7 +159,7 @@
                 String storeId = "";
                 ArrayList<Store> stores = null;
                 int size = 0;
-                
+
                 if (request.getAttribute("stores") != null) {
                     stores = (ArrayList<Store>) request.getAttribute("stores");
                     size = stores.size();
@@ -184,7 +184,6 @@
                         em.getTransaction().begin();
 
                         //Store store = em.find(Store.class, storeId);
-
                         Query query = em.createQuery("select c.rank, count(c.rank) from Comment c where c.commentPK.storeID = :storeID group by c.rank");
                         query.setParameter("storeID", Integer.parseInt(storeId));
                         //get a sorted comment list
@@ -202,8 +201,8 @@
 
             %>
             }
-            
-            
+
+
             function dropMarker(latLngB) {
                 if (markerFilterList[idenClassOfStore(storeRank)] === null) {
                     return;
@@ -1587,6 +1586,7 @@
                                                         $("#dialog-form").dialog("close");
                                                         $(".validateTips").html("");
                                                         displayNotify("Message", "Login Successfully...");
+                                                        location.reload();
                                                     } else {
                                                         $(".validateTips").html("ID or Password is not correct.");
                                                     }
@@ -1718,21 +1718,21 @@
                     <button id="preSortSelected" class="inverse" sortKey="rank" sortBy="1" onclick="sortList(this);">Rank<i class="icon-arrow-down-5 on-right"></i></button>
                 </div>
                 <script>
-            $('#sortList button').on('click', function() {
-                if ($(this).find('i').hasClass('icon-arrow-down-5')) {
-                    $('#sortList button i').removeClass();
-                    $(this).find('i').addClass('icon-arrow-up-5 on-right');
-                    $(this).siblings('button').find('i').addClass('icon-embed on-right');
-                } else if ($(this).find('i').hasClass('icon-arrow-up-5')) {
-                    $('#sortList button i').removeClass();
-                    $(this).find('i').addClass('icon-arrow-down-5 on-right');
-                    $(this).siblings('button').find('i').addClass('icon-embed on-right');
-                } else {
-                    $('#sortList button i').removeClass();
-                    $(this).find('i').addClass('icon-arrow-down-5 on-right');
-                    $(this).siblings('button').find('i').addClass('icon-embed on-right');
-                }
-            });
+                    $('#sortList button').on('click', function() {
+                        if ($(this).find('i').hasClass('icon-arrow-down-5')) {
+                            $('#sortList button i').removeClass();
+                            $(this).find('i').addClass('icon-arrow-up-5 on-right');
+                            $(this).siblings('button').find('i').addClass('icon-embed on-right');
+                        } else if ($(this).find('i').hasClass('icon-arrow-up-5')) {
+                            $('#sortList button i').removeClass();
+                            $(this).find('i').addClass('icon-arrow-down-5 on-right');
+                            $(this).siblings('button').find('i').addClass('icon-embed on-right');
+                        } else {
+                            $('#sortList button i').removeClass();
+                            $(this).find('i').addClass('icon-arrow-down-5 on-right');
+                            $(this).siblings('button').find('i').addClass('icon-embed on-right');
+                        }
+                    });
                 </script>
             </div>
         </div>
@@ -1780,7 +1780,28 @@
             }
             );
         </script>
+        <script>
+            document.querySelector('#chat').addEventListener('click', function() {
+                
+                $.ajax({
+                    url: 'HandleTag',
+                    type: 'POST',
+                    success: function(response) {
+                        var isLogin = (response === 'false');
+                        if (isLogin) {
+                            $('#personalInfo').click();
+                        } else {
+                            var host = document.location.host;
+                            var _userID ="${user.userID}";
+                            var _userPW ="${user.password}";
+                            var __userID=window.btoa(_userID);
+                            var __userPW=window.btoa(_userPW);
+                            window.open('http://' + host + '/WS/DoLoginServlet?AAA='+__userID+'&BBB='+__userPW, 'Chatting Window', 'width=750, height=500');
+                        }
+                    }});
 
+            });
+        </script>
         <canvas id="container"></canvas>
 
     </body>

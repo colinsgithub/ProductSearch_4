@@ -145,7 +145,7 @@ public class HandleStore extends HttpServlet {
                 rd = getServletContext().getRequestDispatcher("/storeInfo.jsp");
                 rd.forward(request, response);
             } catch (Exception e) {
-                Logger.getLogger(HandleTag.class.getName()).log(Level.SEVERE, null);
+                
             } finally {
                 out.close();
             }
@@ -200,7 +200,7 @@ public class HandleStore extends HttpServlet {
 
 
             } catch (Exception e) {
-                Logger.getLogger(HandleTag.class.getName()).log(Level.SEVERE, null);
+               
             } finally {
                 out.close();
             }
@@ -225,7 +225,7 @@ public class HandleStore extends HttpServlet {
                 factory.close();
                 out.println(jsonStore);
             } catch (Exception e) {
-                Logger.getLogger(HandleTag.class.getName()).log(Level.SEVERE, null);
+               
             } finally {
                 out.close();
             }

@@ -92,7 +92,7 @@
     </head>
     <body class="metro">
         <div class="container" style=" margin:5px 60px 40px 60px;">
-            <div class="newStore">
+            <div class="newStore" style=" box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3), 0 3px 8px rgba(0, 0, 0, 0.2);">
                 <fieldset>
                     <legend>New Store</legend>
                     <form style="width: 70%;" action="HandleStore?action=newStoreWithValue" method="POST" enctype="multipart/form-data">
